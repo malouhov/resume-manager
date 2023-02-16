@@ -1,4 +1,4 @@
-package edu.ignat.resumemanager.model;
+package edu.ignat.resumemanager.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +11,7 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "Tags")
-public class Tag {
+public class TagEntity {
 
     @Id
     @GeneratedValue
@@ -21,6 +21,6 @@ public class Tag {
     private String name;
 
     @ManyToMany(mappedBy = "tags")
-    private Set<Response> tags = new HashSet<>();
+    private Set<ResponseEntity> tags = new HashSet<>();
 
 }
